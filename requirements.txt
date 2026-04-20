@@ -1,12 +1,10 @@
 streamlit>=1.32
 
-# Core
 pandas>=2.0
 
-# Geospatial stack pinned for Streamlit Cloud
 geopandas==0.14.4
 shapely>=2.0
 pyproj>=3.6
+pyogrio>=0.7
 
-# Visualization
 pydeck>=0.8

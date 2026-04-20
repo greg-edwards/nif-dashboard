@@ -1,5 +1,6 @@
 import streamlit as st
 import geopandas as gpd
+gpd.options.io_engine = "pyogrio"
 import pandas as pd
 import pydeck as pdk
 from pathlib import Path
