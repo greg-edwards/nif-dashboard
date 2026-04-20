@@ -3,8 +3,8 @@ streamlit>=1.32
 pandas>=2.0
 
 geopandas==0.14.4
+fiona==1.9.6
 shapely>=2.0
 pyproj>=3.6
-pyogrio>=0.7
 
 pydeck>=0.8
