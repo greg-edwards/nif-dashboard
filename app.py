@@ -13,6 +13,46 @@ st.set_page_config(
     layout="wide"
 )
 
+
+#password
+
+def check_password():
+    """Returns True if the user has entered the correct password."""
+
+    def password_entered():
+        if st.session_state["password"] == st.secrets["APP_PASSWORD"]:
+            st.session_state["authenticated"] = True
+            del st.session_state["password"]
+        else:
+            st.session_state["authenticated"] = False
+
+    if "authenticated" not in st.session_state:
+        st.text_input(
+            "Password",
+            type="password",
+            on_change=password_entered,
+            key="password",
+        )
+        return False
+
+    if not st.session_state["authenticated"]:
+        st.text_input(
+            "Password",
+            type="password",
+            on_change=password_entered,
+            key="password",
+        )
+        st.error("❌ Incorrect password")
+        return False
+
+    return True
+
+
+if not check_password():
+    st.stop()
+
+
+
 # ======================================================
 # File paths
 # ======================================================
